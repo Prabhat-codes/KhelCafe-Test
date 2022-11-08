@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bootstrap demo</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+</head>
+
+<body>
+    <div style="display: flex; flex-direction: col; flex-wrap: wrap">
+        {% for title, description, image , url in news %}
+        <div class="card" style="width: 18rem;">
+            <img class="card-img-top" src="{{ image }}" alt="Card image cap" />
+            <div class="card-body">
+                <h5 class="card-title">{{ title }}</h5>
+                <p class="card-text">{{ description }}</p>
+                <a href="{{ url }}" class="btn btn-primary">Source</a>
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+</body>
+
+</html>
