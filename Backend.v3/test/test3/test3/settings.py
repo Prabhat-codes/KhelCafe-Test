@@ -1,3 +1,4 @@
+import os
 """
 Django settings for test3 project.
 
@@ -14,6 +15,7 @@ from pathlib import Path
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
+# TEMPLATES_DIRS = os.path.join(BASE_DIR,'templates')
 
 
 # Quick-start development settings - unsuitable for production
@@ -51,11 +53,10 @@ MIDDLEWARE = [
 ]
 
 ROOT_URLCONF = 'test3.urls'
-
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [os.path.join(BASE_DIR,'news/templates/news')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
